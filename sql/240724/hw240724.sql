@@ -42,7 +42,7 @@ FROM employees e1, employees e2
 WHERE e1.department_id = e2.department_id AND e2.employee_id = 104;
 
 -- 9. JOB_GRADRES 테이블을 생성하고 모든 사원의 이름, 업무, 부서이름, 급여, 급여등급을 조회하세요
-SELECT e.first_name 사원명, j.job_title 업무, d.department_name 부서명, e.salary 급여, jg.grade_level 급여등급
-FROM employees e, jobs j, departments d, job_grades jg
-WHERE e.department_id = d.department_id AND e.job_id = j.job_id AND e.salary BETWEEN jg.lowest_sal AND jg.highest_sal;
+SELECT e.first_name 사원명, e.job_id 업무, d.department_name 부서명, e.salary 급여, jg.grade_level 급여등급
+FROM employees e, departments d, job_grades jg
+WHERE e.departmen4t_id = d.department_id AND e.salary BETWEEN jg.lowest_sal AND jg.highest_sal;
 
